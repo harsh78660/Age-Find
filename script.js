@@ -1,5 +1,5 @@
 const dobInput = document.getElementById('dob');
-const ageSpan = document.getElementById('age');
+const resultText = document.getElementById('result');
 const resetBtn = document.getElementById('resetBtn');
 
 dobInput.addEventListener('change', () => {
@@ -9,14 +9,19 @@ dobInput.addEventListener('change', () => {
   let age = today.getFullYear() - dob.getFullYear();
   const monthDiff = today.getMonth() - dob.getMonth();
 
-  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+  // Check if birthday has occurred this year
+  const birthdayPassed = monthDiff > 0 || (monthDiff === 0 && today.getDate() >= dob.getDate());
+  if (!birthdayPassed) {
     age--;
   }
 
-  ageSpan.textContent = age;
+  const completedYears = age;
+  const runningYear = age + 1;
+
+  resultText.innerHTML = `Your total age is <strong>${completedYears} years</strong> and you are now running <strong>${runningYear} years</strong>.`;
 });
 
 resetBtn.addEventListener('click', () => {
   dobInput.value = "";
-  ageSpan.textContent = "--";
+  resultText.innerHTML = 'Your age is: <span id="age">--</span>';
 });
