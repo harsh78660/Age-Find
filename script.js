@@ -1,5 +1,6 @@
 const dobInput = document.getElementById('dob');
 const ageSpan = document.getElementById('age');
+const resetBtn = document.getElementById('resetBtn');
 
 dobInput.addEventListener('change', () => {
   const dob = new Date(dobInput.value);
@@ -14,6 +15,7 @@ dobInput.addEventListener('change', () => {
 
   ageSpan.textContent = age;
 });
+
 resetBtn.addEventListener('click', () => {
   dobInput.value = "";
   ageSpan.textContent = "--";
