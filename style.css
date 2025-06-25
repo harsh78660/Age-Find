@@ -62,7 +62,6 @@ input[type="date"]:focus {
   font-size: 1.5rem;
 }
 
-
 #resetBtn {
   margin-top: 20px;
   background-color: #f44336;
@@ -78,13 +77,14 @@ input[type="date"]:focus {
 #resetBtn:hover {
   background-color: #c62828;
 }
-@media (max-width: 600px) {
+
+/* ✅ Responsive for Mobile */
+@media (max-width: 480px) {
   .container {
-    padding: 30px 20px;
-    width: 90%;
+    padding: 20px 15px;
   }
 
-  h1 {
+  .container h1 {
     font-size: 1.5rem;
   }
 
@@ -95,13 +95,11 @@ input[type="date"]:focus {
 
   input[type="date"],
   #resetBtn {
-    width: 100%;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    padding: 8px 12px;
   }
 
-  #resetBtn {
-    margin-top: 15px;
-    padding: 10px;
+  #age {
+    font-size: 1.2rem;
   }
 }
-
